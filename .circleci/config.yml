@@ -5,7 +5,7 @@ jobs:
     docker:
       - image: circleci/python:3.7
 
-    working_directory: C:\Users\DELL\OneDrive\Documents\venv
+    working_directory: ~/repo
 
     steps:
       # Step 1: obtain repo from GitHub
@@ -15,7 +15,7 @@ jobs:
           name: install dependencies
           command: |
             python3 -m venv venv
-            . venv/bin/activate
+            . venv/Scripts/activate
             pip install -r requirements.txt
       # Step 3: run linter and tests
       - run:
